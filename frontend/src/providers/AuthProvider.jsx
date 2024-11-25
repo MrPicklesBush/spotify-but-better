@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { axiosInstance } from "../lib/axios";
@@ -39,6 +40,11 @@ const AuthProvider = ({ children }) => {
     }
 
     return <>{children}</>;
+};
+
+// Define PropTypes for the component
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired, // Ensure `children` is a valid React node
 };
 
 export default AuthProvider;
